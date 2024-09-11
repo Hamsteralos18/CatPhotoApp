@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mexiti.catphotoapp.R
 
-
+//Depende del estado de la imagen catUI...
 @Composable
 
 fun HomeScreen(
@@ -29,7 +29,7 @@ fun HomeScreen(
 
 
 
-
+//Resultado esperado de la web
 @Composable
 fun ResultScreen(photos:String, modifier: Modifier = Modifier){
     Box(modifier = modifier,
