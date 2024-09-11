@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mexiti.catphotoapp.network.CatApi
 import kotlinx.coroutines.launch
+import java.io.IOException
 
 
 //Que herede de
@@ -27,8 +28,12 @@ class CatViewModel:ViewModel(){
     //get es una corrutina, necesita metodo para llamar
     fun getCatPhotos(){
         viewModelScope.launch {
-            val listResult = CatApi.retrofiService.getPhotos()
-            catUiState = listResult
+            try {
+                val listResult = CatApi.retrofiService.getPhotos()
+                catUiState = listResult
+            }
+            catch (e: IOException){}
+
         }
     }
 }
